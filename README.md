@@ -58,6 +58,10 @@ $ php composer.phar update
 ### php artisan view:erb2blade
 `app/views`ディレクトリ下にある全ての`.*.erb`ファイルを、`.blade.php`ファイルに変換します。
 
+## 注意
+* <% %>ディレクティブの中の変数まではみていません。手動で変換してください。
+* Rubyのcase/when/endブロックの変換は不完全です。`@end`の部分を `<?php endswitch; ?>`に置き換えてください。
+
 ## ライセンス
 MIT
 

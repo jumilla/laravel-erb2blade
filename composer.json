@@ -1,6 +1,10 @@
 {
     "name": "jumilla/erb2blade",
-    "description": "",
+    "type": "framework-extension",
+    "description": "convert .*.erb to .blade.php",
+    "license": "MIT",
+    "keywords": ["Laravel", "Laravel4", "erb", "blade"],
+    "homepage": "http://io.laravel.jp",
     "authors": [
         {
             "name": "Fumio Furukawa",
