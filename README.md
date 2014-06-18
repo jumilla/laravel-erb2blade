@@ -4,22 +4,22 @@
 ## 機能
 
 * RailsのテキストテンプレートErbファイル(.*.erb)を、Laravel4のビューテンプレートBladeファイル(.blade.php)に変換します。
-* Artisanコマンド'view:erb2blade'で変換できます。
+* Artisanコマンド`view:erb2blade`で変換できます。
 
 ## 対応erbディレクティブ
 
-* '<%# ... %>' => '{{-- --}}'
-* '<%= ... %>' => '{{ }}'
-* '<% if statement %>' => '@if (statement)'
-* '<% unless statement %>' => '@if (!(statement))'
-* '<% while statement do %>' => '@while (statement)'
-* '<% statement.each do |value| %>' => '@foreach (statement as $value)'
-* '<% statement.each_with_index do |value, key| %>' => '@foreach (statement as $key => $value)'
-* '<% case statement %>' => '<?php switch (statement): ?>'
-* '<% when statement %>' => '<?php case statement: ?>'
-* '<% else %>' => '@else'
-* '<% end %>' => '@end'
-* '<% ... %>' => '<?php ... ?>'
+* `<%# ... %>` => `{{-- --}}`
+* `<%= ... %>` => `{{ }}`
+* `<% if statement %>` => `@if (statement)`
+* `<% unless statement %>` => `@if (!(statement))`
+* `<% while statement do %>` => `@while (statement)`
+* `<% statement.each do |value| %>` => `@foreach (statement as $value)`
+* `<% statement.each_with_index do |value, key| %>` => `@foreach (statement as $key => $value)`
+* `<% case statement %>` => `<?php switch (statement): ?>`
+* `<% when statement %>` => `<?php case statement: ?>`
+* `<% else %>` => `@else`
+* `<% end %>` => `@end`
+* `<% ... %>` => `<?php ... ?>`
 
 ## インストール方法
 
@@ -45,11 +45,11 @@ $ php composer.phar update
 
 `app/config/app.config`ファイルを編集します。
 ``` app/config/app.config
-	'providers' => [
-		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
+	`providers` => [
+		`Illuminate\Foundation\Providers\ArtisanServiceProvider`,
 		...
 		↓追加する
-		'Jumilla\Erb2Blade\ServiceProvider',
+		`Jumilla\Erb2Blade\ServiceProvider`,
 	],
 ```
 
