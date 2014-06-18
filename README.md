@@ -30,7 +30,7 @@
 		"laravel/framework": "4.*",
 		...
 		↓追加する
-		"jumilla/erb2blade": "dev-master"
+		"jumilla/erb2blade": "1.*"
 	],
 ```
 
