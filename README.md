@@ -61,8 +61,9 @@ $ php composer.phar update
 `app/views`ディレクトリ下にある全ての`.*.erb`ファイルを、`.blade.php`ファイルに変換します。
 
 ## 注意
-* <% %>ディレクティブの中の変数まではみていません。手動で変換してください。
-* Rubyのcase/when/endブロックの変換は不完全です。`@end`の部分を `<?php endswitch; ?>`に置き換えてください。
+* <% %>ディレクティブの中の変数までは見ていません。`$`を付けるなどして手動で変換してください。
+* Rubyの`end`キーワードは、`if`, `unless`, `case`, `while`, `until`, `for` の制御構文の終端シンボルです。`@end?`に変換するので手動で変換してください。
+* Rubyのcase/when/endブロックの変換は不完全です。`@end?`の部分を `<?php endswitch; ?>`に置き換えてください。
 
 ## ライセンス
 MIT
