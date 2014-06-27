@@ -69,6 +69,9 @@ class Erb2BladeCommand extends Command {
 		// '<%# ... %>' => '{{-- --}}'
 		$content = preg_replace('/<%# (.+?)[[:space:]]*%>/', '{{-- $1 --}}', $content);
 
+		// '<% render ... %>' => '@include (...)'
+		$content = preg_replace('/<%=[[:space:]]+render +(.+)[[:space:]]*%>/', '@include ($1)', $content);
+
 		// '<%= ... %>' => '{{ }}'
 		$content = preg_replace('/<%= (.+?)[[:space:]]*%>/', '{{ $1 }}', $content);
 
@@ -94,10 +97,13 @@ class Erb2BladeCommand extends Command {
 		$content = preg_replace('/<%[[:space:]]when +(.+)[[:space:]]*%>/', '<?php case $1: ?>', $content);
 
 		// '<% else %>' => '@else'
-		$content = preg_replace('/<%[[:space:]]+(else)[[:space:]]*%>/', '@$1', $content);
+		$content = preg_replace('/<%[[:space:]]+else[[:space:]]*%>/', '@else', $content);
 
-		// '<% end %>' => '@end'
-		$content = preg_replace('/<%[[:space:]]+(end)[[:space:]]*%>/', '@$1', $content);
+		// '<% elsif %>' => '@elseif'
+		$content = preg_replace('/<%[[:space:]]+elsif[[:space:]]*%>/', '@elseif', $content);
+
+		// '<% end %>' => '@end?'
+		$content = preg_replace('/<%[[:space:]]+end[[:space:]]*%>/', '@end?', $content);
 
 		// '<% ... %>' => '<?php ... >'
 		$content = preg_replace('/<%[[:space:]]+(.+)[[:space:]]*%>/', '<?php $1 ?>', $content);

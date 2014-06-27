@@ -9,6 +9,7 @@
 ## 対応erbディレクティブ
 
 * `<%# ... %>` => `{{-- --}}`
+* `<%= render ... %>` => `@include (...)`
 * `<%= ... %>` => `{{ }}`
 * `<% if statement %>` => `@if (statement)`
 * `<% unless statement %>` => `@if (!(statement))`
@@ -18,7 +19,8 @@
 * `<% case statement %>` => `<?php switch (statement): ?>`
 * `<% when statement %>` => `<?php case statement: ?>`
 * `<% else %>` => `@else`
-* `<% end %>` => `@end`
+* `<% elsif %>` => `@elseif`
+* `<% end %>` => `@end?`
 * `<% ... %>` => `<?php ... ?>`
 
 ## インストール方法
