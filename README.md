@@ -1,5 +1,5 @@
 
-# erb2blace
+# erb2blade
 
 ## 機能
 
