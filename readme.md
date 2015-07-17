@@ -27,12 +27,26 @@
 
 `composer.json`ファイルを編集します。
 行末のカンマはJSON記法に合わせて設定してください。
+
+### Laravel 5
+
 ``` composer.json
 	"require": [
-		"laravel/framework": "4.*",
+		"laravel/framework": "5.1.*",
 		...
 		↓追加する
-		"jumilla/erb2blade": "1.*"
+		"jumilla/erb2blade": "~2.0"
+	],
+```
+
+### Laravel 4
+
+``` composer.json
+	"require": [
+		"laravel/framework": "4.2.*",
+		...
+		↓追加する
+		"jumilla/erb2blade": "~1.0"
 	],
 ```
 
@@ -69,4 +83,4 @@ $ php composer.phar update
 MIT
 
 ## 著者
-Fumio Furukawa (fumio.furukawa@gmail.com)
+Fumio Furukawa (fumio@jumilla.me)

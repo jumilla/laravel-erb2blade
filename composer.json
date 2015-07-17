@@ -8,16 +8,19 @@
     "authors": [
         {
             "name": "Fumio Furukawa",
-            "email": "fumio.furukawa@gmail.com"
+            "email": "fumio@jumilla.me"
         }
     ],
     "require": {
         "php": ">=5.4.0",
         "laravel/framework": "~4.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
     "autoload": {
         "psr-4": {
-            "Jumilla\\Erb2Blade\\": "src/"
+            "Jumilla\\Erb2Blade\\": "sources/"
         }
     },
     "minimum-stability": "stable"
