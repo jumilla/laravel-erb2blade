@@ -61,7 +61,7 @@ class ApplicationStub extends Container implements ApplicationContract
      */
     public function register($provider, $options = [], $force = false)
     {
-    	return $provider;
+        return $provider;
     }
 
     /**
