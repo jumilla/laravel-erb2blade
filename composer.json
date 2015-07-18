@@ -3,8 +3,8 @@
     "type": "framework-extension",
     "description": "convert .*.erb to .blade.php",
     "license": "MIT",
-    "keywords": ["Laravel", "Laravel4", "erb", "blade"],
-    "homepage": "http://laravel.tokyo",
+    "keywords": ["Laravel", "Laravel 5", "erb", "blade"],
+    "homepage": "http://jumilla.me",
     "authors": [
         {
             "name": "Fumio Furukawa",
@@ -12,8 +12,13 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "laravel/framework": "~4.0"
+        "php": ">=5.5.9",
+        "symfony/finder": "2.7.*",
+        "illuminate/config": "5.0.*",
+        "illuminate/console": "5.0.*",
+        "illuminate/container": "5.0.*",
+        "illuminate/contracts": "5.0.*",
+        "illuminate/support": "5.0.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"

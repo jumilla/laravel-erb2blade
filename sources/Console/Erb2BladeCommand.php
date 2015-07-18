@@ -33,12 +33,11 @@ class Erb2BladeCommand extends Command
      *
      * @return mixed
      */
-    public function fire()
+    public function handle()
     {
         $view_paths = $this->laravel['config']->get('view.paths');
 
         // load laravel services
-        $files = $this->laravel['files'];
         $finder = Finder::create();
 
         $generated_count = 0;
@@ -79,7 +78,7 @@ class Erb2BladeCommand extends Command
         $content = preg_replace('/<%# (.+?)[[:space:]]*%>/', '{{-- $1 --}}', $content);
 
         // '<% render ... %>' => '@include (...)'
-        $content = preg_replace('/<%=[[:space:]]+render +(.+)[[:space:]]*%>/', '@include ($1)', $content);
+        $content = preg_replace('/<%[[:space:]]+render +(.+)[[:space:]]*%>/', '@include ($1)', $content);
 
         // '<%= ... %>' => '{{ }}'
         $content = preg_replace('/<%= (.+?)[[:space:]]*%>/', '{{ $1 }}', $content);
@@ -108,8 +107,8 @@ class Erb2BladeCommand extends Command
         // '<% else %>' => '@else'
         $content = preg_replace('/<%[[:space:]]+else[[:space:]]*%>/', '@else', $content);
 
-        // '<% elsif %>' => '@elseif'
-        $content = preg_replace('/<%[[:space:]]+elsif[[:space:]]*%>/', '@elseif', $content);
+        // '<% elsif statement %>' => '@elseif'
+        $content = preg_replace('/<%[[:space:]]+elsif +(.+)[[:space:]]*%>/', '@elseif $1', $content);
 
         // '<% end %>' => '@end?'
         $content = preg_replace('/<%[[:space:]]+end[[:space:]]*%>/', '@end?', $content);
